@@ -239,6 +239,7 @@ function buildMailtoFallback() {
   const name    = document.getElementById('name').value.trim();
   const email   = document.getElementById('email').value.trim();
   const company = document.getElementById('company').value.trim();
+  const phone   = document.getElementById('phone').value.trim() || '未記入';
   const plan    = document.getElementById('plan').value || '未選択';
   const message = document.getElementById('message').value.trim();
 
@@ -246,6 +247,7 @@ function buildMailtoFallback() {
     `お名前: ${name}`,
     `メールアドレス: ${email}`,
     `会社名: ${company}`,
+    `電話番号: ${phone}`,
     `ご興味のあるプラン: ${plan}`,
     '',
     '【AI化したい業務・お困りの課題】',
