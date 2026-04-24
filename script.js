@@ -222,25 +222,92 @@ const sectionObserver = new IntersectionObserver(entries => {
 sections.forEach(s => sectionObserver.observe(s));
 
 /* ===================================
-   Contact Form
+   Contact Form — FormSubmit.co でメール送信
+   初回送信時に受信先アドレスへアクティベーション
+   メールが届くので、そのリンクを必ずクリックすること
 =================================== */
+const CONTACT_ENDPOINT = 'https://formsubmit.co/ajax/hyouma48483@gmail.com';
+
 const contactForm  = document.getElementById('contactForm');
 const successModal = document.getElementById('successModal');
 const modalClose   = document.getElementById('modalClose');
 const modalOverlay = document.getElementById('modalOverlay');
 
-contactForm.addEventListener('submit', e => {
+const PLAN_LABELS = {
+  starter:    'スタータープラン（¥80,000〜）',
+  business:   'ビジネスプラン（¥300,000〜）',
+  enterprise: 'エンタープライズプラン（要相談）',
+  poc:        'まずPoC（概念実証）から試したい',
+  consult:    '導入効果の試算だけ聞きたい'
+};
+
+function buildMailtoFallback(data) {
+  const body = [
+    `お名前: ${data.name}`,
+    `メールアドレス: ${data.email}`,
+    `会社名: ${data.company}`,
+    `ご興味のあるプラン: ${data.plan}`,
+    '',
+    '【AI化したい業務・お困りの課題】',
+    data.message
+  ].join('\n');
+  const subject = `【NEXUS AI】お問い合わせ - ${data.company}`;
+  return `mailto:hyouma48483@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+contactForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const btn = contactForm.querySelector('button[type="submit"]');
+
+  const btn      = contactForm.querySelector('button[type="submit"]');
   const original = btn.textContent;
   btn.textContent = '送信中...';
-  btn.disabled = true;
-  setTimeout(() => {
+  btn.disabled   = true;
+
+  const data = {
+    name:    document.getElementById('name').value.trim(),
+    email:   document.getElementById('email').value.trim(),
+    company: document.getElementById('company').value.trim(),
+    plan:    PLAN_LABELS[document.getElementById('plan').value] || '未選択',
+    message: document.getElementById('message').value.trim()
+  };
+
+  const payload = {
+    ...data,
+    _subject:  `【NEXUS AI】新規お問い合わせ - ${data.company}`,
+    _template: 'table',
+    _captcha:  'false',
+    _replyto:  data.email
+  };
+
+  try {
+    const res = await fetch(CONTACT_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept':       'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await res.json().catch(() => ({}));
+    if (!res.ok || result.success === 'false') {
+      throw new Error(result.message || 'send failed');
+    }
+
     contactForm.reset();
-    btn.textContent = original;
-    btn.disabled = false;
     successModal.classList.add('active');
-  }, 900);
+  } catch (err) {
+    console.error('お問い合わせ送信エラー:', err);
+    const useMailto = confirm(
+      '送信処理に失敗しました。\nお使いのメールソフトを起動して送信しますか？\n（「キャンセル」でもう一度試せます）'
+    );
+    if (useMailto) {
+      window.location.href = buildMailtoFallback(data);
+    }
+  } finally {
+    btn.textContent = original;
+    btn.disabled    = false;
+  }
 });
 
 function closeModal() { successModal.classList.remove('active'); }
