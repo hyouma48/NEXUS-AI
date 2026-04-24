@@ -1180,3 +1180,279 @@ a { color: inherit; text-decoration: none; transition: color var(--transition); 
   .dash__statuses { padding: 6px 10px 10px; gap: 4px; }
   .dash__status-item { padding: 5px 8px; }
 }
+
+/* ===================================
+   Futuristic Enhancement Layer
+=================================== */
+
+/* Fixed scanline texture overlay */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(99,102,241,0.012) 3px,
+    rgba(99,102,241,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Moving scan beam */
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 140px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(99,102,241,0.055),
+    rgba(6,182,212,0.035),
+    transparent
+  );
+  animation: scanBeam 12s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes scanBeam {
+  0%   { top: -140px; }
+  100% { top: 100%; }
+}
+
+/* More visible background grid */
+.hero__grid {
+  background-image:
+    linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.07) 1px, transparent 1px) !important;
+}
+
+/* HUD corner brackets on glass cards */
+.glass-card { position: relative; }
+.glass-card::before,
+.glass-card::after {
+  content: '';
+  position: absolute;
+  width: 13px; height: 13px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.glass-card::before {
+  top: 9px; left: 9px;
+  border-top: 1.5px solid rgba(99,102,241,0.65);
+  border-left: 1.5px solid rgba(99,102,241,0.65);
+}
+.glass-card::after {
+  bottom: 9px; right: 9px;
+  border-bottom: 1.5px solid rgba(6,182,212,0.65);
+  border-right: 1.5px solid rgba(6,182,212,0.65);
+}
+.glass-card:hover::before,
+.glass-card:hover::after { opacity: 1; }
+
+/* Section tag neon glow */
+.section-tag {
+  box-shadow: 0 0 16px rgba(99,102,241,0.22), inset 0 0 14px rgba(99,102,241,0.06);
+  text-shadow: 0 0 10px rgba(129,140,248,0.5);
+}
+
+/* Gradient text neon glow */
+.gradient-text {
+  filter: drop-shadow(0 0 14px rgba(99,102,241,0.38));
+}
+
+/* Hero title ambient glow */
+.hero__title {
+  text-shadow: 0 0 80px rgba(99,102,241,0.12);
+}
+
+/* Intensified primary button glow */
+.btn--primary {
+  box-shadow: 0 4px 20px rgba(99,102,241,0.45),
+              0 0 0 1px rgba(99,102,241,0.22),
+              0 0 32px rgba(6,182,212,0.12) !important;
+}
+.btn--primary:hover {
+  box-shadow: 0 8px 28px rgba(99,102,241,0.62),
+              0 0 0 1px rgba(99,102,241,0.35),
+              0 0 55px rgba(6,182,212,0.22) !important;
+}
+
+/* Nav CTA intensified glow */
+.nav__cta {
+  box-shadow: 0 4px 16px rgba(99,102,241,0.4),
+              0 0 22px rgba(99,102,241,0.14) !important;
+}
+.nav__cta:hover {
+  box-shadow: 0 6px 22px rgba(99,102,241,0.56),
+              0 0 38px rgba(99,102,241,0.22) !important;
+}
+
+/* Number elements ambient glow */
+.stat__num,
+.vision-stat__num,
+.process-step__num,
+.price-num {
+  filter: drop-shadow(0 0 10px rgba(99,102,241,0.28));
+}
+
+/* Featured pricing card pulse glow */
+.pricing-card--featured {
+  animation: featuredCardGlow 4s ease-in-out infinite !important;
+}
+@keyframes featuredCardGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(99,102,241,0.38),
+                0 0 28px rgba(99,102,241,0.18),
+                var(--glass-shadow);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(6,182,212,0.45),
+                0 0 42px rgba(6,182,212,0.22),
+                var(--glass-shadow);
+  }
+}
+
+/* Vision stat hover glow */
+.vision-stat:hover {
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.3),
+              0 0 22px rgba(99,102,241,0.14),
+              var(--glass-shadow) !important;
+}
+
+/* Badge dot enhanced glow */
+.badge-dot {
+  box-shadow: 0 0 8px var(--accent), 0 0 16px rgba(6,182,212,0.4);
+}
+
+/* Floating badges neon border */
+.floating-badge {
+  border-color: rgba(99,102,241,0.28) !important;
+  box-shadow: var(--glass-shadow), 0 0 18px rgba(99,102,241,0.1) !important;
+}
+
+/* ===================================
+   Subsidy Section
+=================================== */
+.subsidy { padding: 120px 0; }
+
+.subsidy__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.subsidy-card {
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.subsidy-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gradient);
+  opacity: 0.45;
+  transition: opacity 0.3s;
+}
+.subsidy-card:hover::before { opacity: 1; }
+
+/* Override: glass-card::before/::after for subsidy-card (the top bar takes the ::before slot) */
+.subsidy-card.glass-card::before {
+  width: auto; height: 2px;
+  border: none;
+  background: var(--gradient);
+  opacity: 0.45;
+  top: 0; left: 0; right: 0; bottom: auto;
+}
+.subsidy-card.glass-card:hover::before { opacity: 1; }
+.subsidy-card.glass-card::after {
+  bottom: 9px; right: 9px;
+  border-bottom: 1.5px solid rgba(6,182,212,0.65);
+  border-right: 1.5px solid rgba(6,182,212,0.65);
+  width: 13px; height: 13px;
+  background: none;
+  opacity: 0;
+}
+.subsidy-card.glass-card:hover::after { opacity: 1; }
+
+.subsidy-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.subsidy-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.subsidy-card:hover .subsidy-card__icon { transform: scale(1.18) rotate(-4deg); }
+
+.subsidy-card__amount { text-align: right; }
+.subsidy-card__amount-label {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.subsidy-card__amount-num {
+  font-family: var(--font-num);
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(99,102,241,0.3));
+}
+
+.subsidy-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.subsidy-card p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.subsidy-card__rate {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.subsidy-card__rate strong { color: var(--primary-light); }
+
+.subsidy-card__tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.subsidy-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 3px 10px;
+  background: rgba(6,182,212,0.09);
+  border: 1px solid rgba(6,182,212,0.26);
+  border-radius: 100px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Subsidy responsive */
+@media (max-width: 768px) {
+  .subsidy__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .subsidy { padding: 80px 0; }
+  .subsidy-card { padding: 24px 20px; }
+}
