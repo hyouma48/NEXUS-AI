@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS AI — AI業務システム開発</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- スクロール進捗バー -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ナビゲーション -->
+  <header id="header">
+    <nav class="nav">
+      <a href="#" class="nav__logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">NEXUS <em>AI</em></span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#features"     class="nav-link">特徴</a></li>
+        <li><a href="#solutions"    class="nav-link">ソリューション</a></li>
+        <li><a href="#pricing"      class="nav-link">料金</a></li>
+        <li><a href="#faq"          class="nav-link">FAQ</a></li>
+        <li><a href="#contact"      class="nav-link">お問い合わせ</a></li>
+      </ul>
+      <button class="nav__cta btn-ripple" onclick="scrollToSection('contact')">無料相談する</button>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav__mobile" id="mobileMenu">
+      <ul>
+        <li><a href="#features">特徴</a></li>
+        <li><a href="#solutions">ソリューション</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="#contact" class="mobile-cta">無料相談する</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ヒーロー -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__grid"></div>
+      <div class="hero__orb hero__orb--1" data-parallax="0.03"></div>
+      <div class="hero__orb hero__orb--2" data-parallax="0.05"></div>
+      <div class="hero__orb hero__orb--3" data-parallax="0.02"></div>
+    </div>
+
+    <div class="hero__content reveal-item">
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        AI × 業務システム開発のプロフェッショナル
+      </div>
+      <h1 class="hero__title">
+        業務の非効率を、<br />
+        <span class="gradient-text">AIで解決する。</span>
+      </h1>
+      <p class="hero__desc">
+        貴社固有の業務課題に合わせたカスタムAIシステムを設計・開発。<br />
+        自動化・予測・分析の力で、ビジネスを次のステージへ引き上げます。
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary btn-ripple" onclick="scrollToSection('contact')">無料課題ヒアリング →</button>
+        <button class="btn btn--ghost  btn-ripple" onclick="scrollToSection('solutions')">ソリューションを見る</button>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__top">
+            <span class="stat__num" data-target="80">0</span>
+            <span class="stat__plus">%</span>
+          </div>
+          <span class="stat__label">平均業務時間削減</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <div class="stat__top">
+            <span class="stat__num" data-target="120">0</span>
+            <span class="stat__plus">+</span>
+          </div>
+          <span class="stat__label">導入実績</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <div class="stat__top">
+            <span class="stat__num" data-target="3">0</span>
+            <span class="stat__plus">週〜</span>
+          </div>
+          <span class="stat__label">最短開発期間</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual reveal-item" style="--reveal-delay:0.2s">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+          <div class="browser-url">NEXUS AI — ダッシュボード</div>
+        </div>
+        <div class="browser-content">
+          <div class="mockup-nav"></div>
+          <!-- AI Dashboard mockup -->
+          <div class="mockup-hero" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px;background:none">
+            <div class="mockup-card" style="padding:14px;background:linear-gradient(135deg,rgba(99,102,241,0.18),rgba(6,182,212,0.1));border:1px solid rgba(99,102,241,0.25)">
+              <div style="height:8px;width:60%;background:rgba(255,255,255,0.25);border-radius:4px;margin-bottom:8px"></div>
+              <div style="height:22px;width:80%;background:rgba(255,255,255,0.18);border-radius:4px;margin-bottom:4px"></div>
+              <div style="height:6px;width:50%;background:rgba(99,102,241,0.4);border-radius:4px"></div>
+            </div>
+            <div class="mockup-card" style="padding:14px;background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(99,102,241,0.08));border:1px solid rgba(6,182,212,0.2)">
+              <div style="height:8px;width:55%;background:rgba(255,255,255,0.25);border-radius:4px;margin-bottom:8px"></div>
+              <div style="height:22px;width:70%;background:rgba(255,255,255,0.18);border-radius:4px;margin-bottom:4px"></div>
+              <div style="height:6px;width:45%;background:rgba(6,182,212,0.5);border-radius:4px"></div>
+            </div>
+          </div>
+          <div style="padding:0 14px 10px;display:flex;gap:6px;align-items:flex-end;height:64px">
+            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:40%"></div>
+            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:65%"></div>
+            <div style="flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.8),rgba(6,182,212,0.2));border-radius:3px 3px 0 0;height:55%"></div>
+            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:80%"></div>
+            <div style="flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.8),rgba(6,182,212,0.2));border-radius:3px 3px 0 0;height:72%"></div>
+            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:95%"></div>
+            <div style="flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.8),rgba(6,182,212,0.2));border-radius:3px 3px 0 0;height:88%"></div>
+          </div>
+          <div class="mockup-cards">
+            <div class="mockup-card"><div class="mockup-icon"></div><div class="mockup-line"></div><div class="mockup-line short"></div></div>
+            <div class="mockup-card"><div class="mockup-icon"></div><div class="mockup-line"></div><div class="mockup-line short"></div></div>
+            <div class="mockup-card"><div class="mockup-icon"></div><div class="mockup-line"></div><div class="mockup-line short"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="floating-badge floating-badge--speed">
+        <span class="fb-icon">⚡</span>
+        <div><div class="fb-title">業務時間 80%削減</div><div class="fb-sub">AI自動化による実績</div></div>
+      </div>
+      <div class="floating-badge floating-badge--ai">
+        <span class="fb-icon">🤖</span>
+        <div><div class="fb-title">Claude AI搭載</div><div class="fb-sub">最先端LLMを活用</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特徴 -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header reveal-item">
+        <span class="section-tag">FEATURES</span>
+        <h2 class="section-title">選ばれる<em>理由</em></h2>
+        <p class="section-desc">貴社の業務課題に特化したAIシステムを、迅速かつ確実に構築します</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0s">
+          <div class="feature-card__icon">🤖</div>
+          <h3>カスタムAI開発</h3>
+          <p>汎用ツールでは解決できない業務固有の課題に対応。貴社のデータと業務フローに最適化されたAIを一から構築します。</p>
+          <div class="feature-card__tag">オーダーメイド対応</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.08s">
+          <div class="feature-card__icon">⚡</div>
+          <h3>業務自動化</h3>
+          <p>データ入力・書類作成・メール対応・承認フローなど、反復業務をAIが代替。人的リソースをコア業務に集中させます。</p>
+          <div class="feature-card__tag">平均80%の工数削減</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.16s">
+          <div class="feature-card__icon">📊</div>
+          <h3>データ分析・予測</h3>
+          <p>蓄積データからパターンを学習し、需要予測・リスク検知・異常検知など、意思決定を支援するAI基盤を構築します。</p>
+          <div class="feature-card__tag">予測精度95%以上</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.24s">
+          <div class="feature-card__icon">🔗</div>
+          <h3>既存システム連携</h3>
+          <p>SAP・Salesforce・kintone・社内DBなど、既存のシステム資産を活かしながらAI機能を追加実装します。</p>
+          <div class="feature-card__tag">API/RPA連携対応</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.32s">
+          <div class="feature-card__icon">🔒</div>
+          <h3>エンタープライズセキュリティ</h3>
+          <p>社内データをクラウドに送らないオンプレミス対応、アクセス権限管理、監査ログなど、企業水準のセキュリティを標準実装。</p>
+          <div class="feature-card__tag">ISO27001準拠対応</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.4s">
+          <div class="feature-card__icon">🛠️</div>
+          <h3>導入後の継続支援</h3>
+          <p>リリース後もモデル精度の改善・機能追加・障害対応を専任チームが担当。システムが成長し続ける体制を整えます。</p>
+          <div class="feature-card__tag">SLA保証あり</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ビジョン（ボールドタイポグラフィ × グラスモーフィズム） -->
+  <section class="vision" id="vision">
+    <div class="vision__bg">
+      <div class="vision__orb vision__orb--1"></div>
+      <div class="vision__orb vision__orb--2"></div>
+    </div>
+    <div class="container">
+      <div class="vision__inner">
+        <div class="vision__left reveal-item">
+          <span class="section-tag">OUR VISION</span>
+          <h2 class="vision__title">
+            AIで変える、<br />
+            <span class="vision__accent">日本の現場。</span>
+          </h2>
+          <p class="vision__body">
+            日本企業の現場には、まだ多くの「人手でやるしかない」が残っています。
+            私たちは最新のAI技術と深い業務理解を組み合わせ、
+            その一つひとつを解決することで、日本のビジネスを世界と戦える水準へ引き上げます。
+          </p>
+        </div>
+        <div class="vision__numbers reveal-item" style="--reveal-delay:0.15s">
+          <div class="vision-stat glass-card">
+            <span class="vision-stat__num counter-num" data-target="80">0</span>
+            <span class="vision-stat__unit">%</span>
+            <span class="vision-stat__label">平均業務時間削減率</span>
+          </div>
+          <div class="vision-stat glass-card">
+            <span class="vision-stat__num counter-num" data-target="120">0</span>
+            <span class="vision-stat__unit">+</span>
+            <span class="vision-stat__label">AI導入実績</span>
+          </div>
+          <div class="vision-stat glass-card">
+            <span class="vision-stat__num counter-num" data-target="98">0</span>
+            <span class="vision-stat__unit">%</span>
+            <span class="vision-stat__label">プロジェクト成功率</span>
+          </div>
+          <div class="vision-stat glass-card">
+            <span class="vision-stat__num counter-num" data-target="24">0</span>
+            <span class="vision-stat__unit">h</span>
+            <span class="vision-stat__label">サポート対応時間</span>
+          </div>
+        </div>
+      </div>
+      <div class="vision__quote reveal-item" style="--reveal-delay:0.3s">
+        <blockquote class="vision__quote-text">
+          "テクノロジーで、人が本来すべき仕事に集中できる環境をつくる。<br class="pc-only" />
+          それが、私たちの使命です。"
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 開発プロセス -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal-item">
+        <span class="section-tag">PROCESS</span>
+        <h2 class="section-title">開発の<em>流れ</em></h2>
+        <p class="section-desc">課題ヒアリングから本番稼働まで、一貫してサポートします</p>
+      </div>
+      <div class="process__steps">
+        <div class="process-step glass-card reveal-item" style="--reveal-delay:0s">
+          <div class="process-step__num">01</div>
+          <div class="process-step__content">
+            <h3>課題ヒアリング</h3>
+            <p>業務フロー・ボトルネック・データ状況を詳しくお伺いし、AI化による効果試算をご提示します。</p>
+          </div>
+        </div>
+        <div class="process-connector reveal-item" style="--reveal-delay:0.05s">→</div>
+        <div class="process-step glass-card reveal-item" style="--reveal-delay:0.1s">
+          <div class="process-step__num">02</div>
+          <div class="process-step__content">
+            <h3>AI設計・提案</h3>
+            <p>最適なAIアーキテクチャと技術スタックを選定。PoC（概念実証）で効果を先に確認できます。</p>
+          </div>
+        </div>
+        <div class="process-connector reveal-item" style="--reveal-delay:0.15s">→</div>
+        <div class="process-step glass-card reveal-item" style="--reveal-delay:0.2s">
+          <div class="process-step__num">03</div>
+          <div class="process-step__content">
+            <h3>開発・テスト</h3>
+            <p>アジャイル開発で週次進捗を共有。業務担当者と連携しながら精度を高めていきます。</p>
+          </div>
+        </div>
+        <div class="process-connector reveal-item" style="--reveal-delay:0.25s">→</div>
+        <div class="process-step glass-card reveal-item" style="--reveal-delay:0.3s">
+          <div class="process-step__num">04</div>
+          <div class="process-step__content">
+            <h3>導入・継続改善</h3>
+            <p>現場スタッフへの操作研修から本番稼働後の精度改善まで、長期パートナーとして伴走します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ソリューション -->
+  <section class="features" id="solutions">
+    <div class="container">
+      <div class="section-header reveal-item">
+        <span class="section-tag">SOLUTIONS</span>
+        <h2 class="section-title">AIソリューション<em>（例）</em></h2>
+        <p class="section-desc">業種・用途を問わず、貴社の課題に合ったAIシステムをご提供します</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0s">
+          <div class="feature-card__icon">🏭</div>
+          <h3>製造業向けAI</h3>
+          <p>画像認識による製品の外観検査自動化、センサーデータを用いた設備の故障予知、製造ラインの生産量最適化などに対応します。</p>
+          <div class="feature-card__tag">品質検査 / 設備保全 / 生産最適化</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.08s">
+          <div class="feature-card__icon">💬</div>
+          <h3>社内AIアシスタント</h3>
+          <p>社内マニュアル・議事録・規約をAIが即座に検索・回答。新人教育コストの削減やベテラン社員への問い合わせ負荷を大幅に軽減します。</p>
+          <div class="feature-card__tag">社内FAQ / ナレッジ管理 / 研修支援</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.16s">
+          <div class="feature-card__icon">📋</div>
+          <h3>バックオフィス自動化</h3>
+          <p>請求書・発注書の読み取りと仕訳入力、稟議書の自動起票、月次レポートの自動生成など、定型業務をAIが代替します。</p>
+          <div class="feature-card__tag">書類処理 / 入力自動化 / レポート生成</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.24s">
+          <div class="feature-card__icon">📈</div>
+          <h3>予測・需要分析AI</h3>
+          <p>過去の販売データ・市場トレンドから将来の需要を予測し、在庫過不足の解消や仕入れ最適化を実現。廃棄コストの削減にも貢献します。</p>
+          <div class="feature-card__tag">需要予測 / 在庫最適化 / 価格最適化</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.32s">
+          <div class="feature-card__icon">🎧</div>
+          <h3>カスタマーサポートAI</h3>
+          <p>チャットbotによる24時間自動応答、問い合わせ内容の自動分類・担当者振り分け、応対履歴の要約生成などで顧客対応を効率化します。</p>
+          <div class="feature-card__tag">チャットbot / 問い合わせ分類 / 自動応答</div>
+        </div>
+        <div class="feature-card glass-card reveal-item" style="--reveal-delay:0.4s">
+          <div class="feature-card__icon">👥</div>
+          <h3>人事・採用支援AI</h3>
+          <p>履歴書・職務経歴書のスクリーニング自動化、面接評価のスコアリング支援、社員のスキル可視化・最適配置提案などを実現します。</p>
+          <div class="feature-card__tag">書類選考 / スキル分析 / 配置最適化</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金 -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal-item">
+        <span class="section-tag">PRICING</span>
+        <h2 class="section-title">料金<em>プラン</em></h2>
+        <p class="section-desc">プロジェクト規模に合わせた柔軟なプランをご用意しています</p>
+      </div>
+      <div class="pricing__grid">
+        <div class="pricing-card glass-card reveal-item" style="--reveal-delay:0s">
+          <div class="pricing-card__header">
+            <span class="plan-name">スタータープラン</span>
+            <div class="plan-price">
+              <span class="price-from">¥</span>
+              <span class="price-num">80,000</span>
+              <span class="price-unit">〜</span>
+            </div>
+            <p class="plan-desc">単一業務のAI化・PoC検証向け</p>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 対象業務：1プロセス</li>
+            <li><span class="check">✓</span> PoC（概念実証）込み</li>
+            <li><span class="check">✓</span> APIまたはRPA連携</li>
+            <li><span class="check">✓</span> 操作マニュアル提供</li>
+            <li><span class="check">✓</span> 永続サポート</li>
+          </ul>
+          <button class="btn btn--ghost btn-ripple" onclick="scrollToSection('contact')">相談する</button>
+        </div>
+        <div class="pricing-card pricing-card--featured glass-card reveal-item" style="--reveal-delay:0.1s">
+          <div class="pricing-card__badge">人気No.1</div>
+          <div class="pricing-card__header">
+            <span class="plan-name">ビジネスプラン</span>
+            <div class="plan-price">
+              <span class="price-from">¥</span>
+              <span class="price-num">300,000</span>
+              <span class="price-unit">〜</span>
+            </div>
+            <p class="plan-desc">複数業務の統合AI化・本格導入向け</p>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 対象業務：複数プロセス</li>
+            <li><span class="check">✓</span> 既存システム連携</li>
+            <li><span class="check">✓</span> 管理画面・ダッシュボード</li>
+            <li><span class="check">✓</span> 精度改善（3回まで）</li>
+            <li><span class="check">✓</span> 社内研修・定着支援</li>
+            <li><span class="check">✓</span> 永続サポート</li>
+          </ul>
+          <button class="btn btn--primary btn-ripple" onclick="scrollToSection('contact')">相談する</button>
+        </div>
+        <div class="pricing-card glass-card reveal-item" style="--reveal-delay:0.2s">
+          <div class="pricing-card__header">
+            <span class="plan-name">エンタープライズプラン</span>
+            <div class="plan-price">
+              <span class="price-from" style="font-size:0.9rem">要</span>
+              <span class="price-num" style="font-size:2rem">相談</span>
+            </div>
+            <p class="plan-desc">大規模システム・全社AI化プロジェクト向け</p>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> 全社横断AI戦略立案</li>
+            <li><span class="check">✓</span> オンプレミス対応</li>
+            <li><span class="check">✓</span> 専任PM・エンジニア常駐</li>
+            <li><span class="check">✓</span> SLA保証・監査ログ</li>
+            <li><span class="check">✓</span> 月次改善レポート</li>
+            <li><span class="check">✓</span> 長期保守契約対応</li>
+          </ul>
+          <button class="btn btn--ghost btn-ripple" onclick="scrollToSection('contact')">相談する</button>
+        </div>
+      </div>
+      <p class="pricing__note reveal-item">※ 表示価格はすべて税別です。業務規模・データ量・連携システムによって変動します。まずはご相談ください。</p>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-item">
+        <span class="section-tag">TESTIMONIALS</span>
+        <h2 class="section-title">導入企業の<em>声</em></h2>
+      </div>
+      <div class="testimonials__slider reveal-item">
+        <div class="testimonial-slide active">
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">「月次レポートの作成に毎回3日かかっていたのが、AIシステム導入後は30分で完了するようになりました。担当者が分析・提案業務に集中できるようになり、売上改善にも直結しています。」</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">T</div>
+              <div>
+                <div class="author-name">田中 誠一様</div>
+                <div class="author-role">製造業 / 情報システム部長</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">「社内に散在していたナレッジをAIが即座に検索・回答してくれるシステムを構築してもらいました。新人の立ち上がり期間が半分以下になり、ベテランへの問い合わせも大幅に減少しました。」</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">S</div>
+              <div>
+                <div class="author-name">鈴木 美咲様</div>
+                <div class="author-role">IT企業 / 人事部マネージャー</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card glass-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">「需要予測AIの導入で、過剰在庫による廃棄コストが前年比60%減少しました。提案から本番稼働まで2ヶ月という速さにも驚きましたが、精度が想定以上に高く本当に助かっています。」</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">W</div>
+              <div>
+                <div class="author-name">渡辺 健太様</div>
+                <div class="author-role">小売業 / SCM責任者</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials__dots" id="testimonialDots">
+        <button class="tdot active" data-index="0"></button>
+        <button class="tdot" data-index="1"></button>
+        <button class="tdot" data-index="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal-item">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">よくある<em>質問</em></h2>
+        <p class="section-desc">AI業務システム導入に関するご不明点にお答えします</p>
+      </div>
+      <div class="faq__list reveal-item">
+        <div class="faq-item glass-card">
+          <button class="faq-q" aria-expanded="false">
+            <span>どのような業務にAIを導入できますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a__inner">
+              データ入力・書類作成・問い合わせ対応・在庫管理・品質検査・採用スクリーニングなど、繰り返し発生するルール性の高い業務が最も効果的です。まずは無料ヒアリングで、貴社業務のAI化可能性を診断します。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q" aria-expanded="false">
+            <span>AIの開発・導入にはどのくらいの期間がかかりますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a__inner">
+              業務規模によって異なりますが、単一業務の自動化であれば最短3週間〜1ヶ月でご提供できます。複数業務を統合するビジネスプランは2〜3ヶ月、全社横断のエンタープライズプランは4〜6ヶ月が目安です。PoC（概念実証）から始めることも可能です。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q" aria-expanded="false">
+            <span>社内データをクラウドに送るのは不安です。セキュリティは大丈夫ですか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a__inner">
+              社内ネットワーク内で完結するオンプレミス構成にも対応しています。データは外部に送出せず、アクセス権限管理・通信暗号化・操作ログ記録を標準実装します。金融・医療・官公庁向け案件の実績もあり、高いセキュリティ要件にも対応可能です。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q" aria-expanded="false">
+            <span>現在使っているシステムと連携できますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a__inner">
+              SAP・Salesforce・kintone・freee・Microsoft 365・Google Workspace・各種ERPなど、主要なSaaS・業務システムとのAPI連携実績があります。APIが提供されていないレガシーシステムには、RPAを組み合わせた連携手法をご提案します。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q" aria-expanded="false">
+            <span>AIの予測・判断精度はどのくらいですか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a__inner">
+              業務内容・データ量・データ品質によって異なりますが、過去実績では分類・判定系タスクで95%以上、需要予測で誤差率10%以内を達成しています。導入前にPoC（概念実証）で実際の貴社データを用いた精度確認をお勧めしています。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item glass-card">
+          <button class="faq-q" aria-expanded="false">
+            <span>IT部門がない中小企業でも導入・運用できますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a__inner">
+              はい、対応しています。専門知識不要で使えるUI設計・操作マニュアル・社内研修をセットで提供します。運用後の保守・更新もお任せいただける月額サポートプランもご用意しており、IT部門なしでも安心して運用を続けられます。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__info reveal-item">
+          <span class="section-tag">CONTACT</span>
+          <h2 class="section-title left">まずは無料で<br />課題をご相談ください</h2>
+          <p>「どの業務をAI化すべきか」「本当に効果があるのか」といった段階からご相談いただけます。専任のAIコンサルタントが業務内容をヒアリングし、導入効果の試算とご提案を無料で行います。</p>
+          <div class="contact__badges">
+            <div class="contact-badge glass-card"><span>🕐</span><span>24時間以内にご返信</span></div>
+            <div class="contact-badge glass-card"><span>💬</span><span>完全無料・秘密厳守</span></div>
+            <div class="contact-badge glass-card"><span>📋</span><span>導入効果の無料試算</span></div>
+          </div>
+        </div>
+        <form class="contact__form glass-card reveal-item" id="contactForm" style="--reveal-delay:0.15s">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">*</span></label>
+            <input type="text" id="name" placeholder="山田 太郎" required />
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="example@company.co.jp" required />
+          </div>
+          <div class="form-group">
+            <label for="company">会社名 <span class="required">*</span></label>
+            <input type="text" id="company" placeholder="株式会社〇〇" required />
+          </div>
+          <div class="form-group">
+            <label for="plan">ご興味のあるプラン</label>
+            <select id="plan">
+              <option value="">選択してください</option>
+              <option value="starter">スタータープラン（¥80,000〜）</option>
+              <option value="business">ビジネスプラン（¥300,000〜）</option>
+              <option value="enterprise">エンタープライズプラン（要相談）</option>
+              <option value="poc">まずPoC（概念実証）から試したい</option>
+              <option value="consult">導入効果の試算だけ聞きたい</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">AI化したい業務・お困りの課題 <span class="required">*</span></label>
+            <textarea id="message" rows="4" placeholder="例：毎月の請求書処理に多大な工数がかかっている。データ入力ミスが多い。問い合わせ対応が24時間必要で人手が足りない…など、何でもお聞かせください。" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn-ripple btn--full">無料相談を申し込む →</button>
+          <p class="form-note">※ 送信後24時間以内にご返信いたします。秘密保持契約（NDA）の締結も可能です。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="nav__logo" style="margin-bottom:1rem">
+            <span class="logo-icon">◈</span>
+            <span class="logo-text">NEXUS <em>AI</em></span>
+          </div>
+          <p>AIで業務を革新するシステム開発会社。カスタムAI開発・業務自動化・データ分析基盤の構築を通じて、日本企業の競争力向上を支援します。</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>サービス</h4>
+            <ul>
+              <li><a href="#features">特徴・強み</a></li>
+              <li><a href="#solutions">ソリューション</a></li>
+              <li><a href="#pricing">料金プラン</a></li>
+              <li><a href="#process">開発の流れ</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>会社情報</h4>
+            <ul>
+              <li><a href="#">会社概要</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">特定商取引法</a></li>
+              <li><a href="#">採用情報</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>お問い合わせ</h4>
+            <ul>
+              <li><a href="#contact">無料相談</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#">技術ブログ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 NEXUS AI Inc. All rights reserved.</p>
+        <p>Powered by Claude AI</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="トップへ">↑</button>
+
+  <div class="modal" id="successModal">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__content glass-card">
+      <div class="modal__icon">✓</div>
+      <h3>ご相談を受け付けました！</h3>
+      <p>担当のAIコンサルタントより<br />24時間以内にご連絡いたします。</p>
+      <button class="btn btn--primary btn-ripple" id="modalClose">閉じる</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
