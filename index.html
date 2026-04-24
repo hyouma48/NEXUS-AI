@@ -106,34 +106,80 @@
           <span class="dot dot--green"></span>
           <div class="browser-url">NEXUS AI — ダッシュボード</div>
         </div>
-        <div class="browser-content">
-          <div class="mockup-nav"></div>
-          <!-- AI Dashboard mockup -->
-          <div class="mockup-hero" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px;background:none">
-            <div class="mockup-card" style="padding:14px;background:linear-gradient(135deg,rgba(99,102,241,0.18),rgba(6,182,212,0.1));border:1px solid rgba(99,102,241,0.25)">
-              <div style="height:8px;width:60%;background:rgba(255,255,255,0.25);border-radius:4px;margin-bottom:8px"></div>
-              <div style="height:22px;width:80%;background:rgba(255,255,255,0.18);border-radius:4px;margin-bottom:4px"></div>
-              <div style="height:6px;width:50%;background:rgba(99,102,241,0.4);border-radius:4px"></div>
+        <div class="browser-content dash">
+          <!-- ダッシュボードヘッダー -->
+          <div class="dash__header">
+            <span class="dash__title">AI業務ダッシュボード</span>
+            <span class="dash__live"><span class="dash__live-dot"></span>ライブ</span>
+          </div>
+          <!-- KPIカード -->
+          <div class="dash__kpis">
+            <div class="dash__kpi dash__kpi--purple">
+              <span class="dash__kpi-icon">⚡</span>
+              <span class="dash__kpi-val">80%</span>
+              <span class="dash__kpi-label">業務時間削減</span>
             </div>
-            <div class="mockup-card" style="padding:14px;background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(99,102,241,0.08));border:1px solid rgba(6,182,212,0.2)">
-              <div style="height:8px;width:55%;background:rgba(255,255,255,0.25);border-radius:4px;margin-bottom:8px"></div>
-              <div style="height:22px;width:70%;background:rgba(255,255,255,0.18);border-radius:4px;margin-bottom:4px"></div>
-              <div style="height:6px;width:45%;background:rgba(6,182,212,0.5);border-radius:4px"></div>
+            <div class="dash__kpi dash__kpi--cyan">
+              <span class="dash__kpi-icon">📋</span>
+              <span class="dash__kpi-val">1,240</span>
+              <span class="dash__kpi-label">月間処理件数</span>
+            </div>
+            <div class="dash__kpi dash__kpi--green">
+              <span class="dash__kpi-icon">🎯</span>
+              <span class="dash__kpi-val">95%</span>
+              <span class="dash__kpi-label">AI判定精度</span>
             </div>
           </div>
-          <div style="padding:0 14px 10px;display:flex;gap:6px;align-items:flex-end;height:64px">
-            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:40%"></div>
-            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:65%"></div>
-            <div style="flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.8),rgba(6,182,212,0.2));border-radius:3px 3px 0 0;height:55%"></div>
-            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:80%"></div>
-            <div style="flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.8),rgba(6,182,212,0.2));border-radius:3px 3px 0 0;height:72%"></div>
-            <div style="flex:1;background:linear-gradient(180deg,rgba(99,102,241,0.7),rgba(99,102,241,0.2));border-radius:3px 3px 0 0;height:95%"></div>
-            <div style="flex:1;background:linear-gradient(180deg,rgba(6,182,212,0.8),rgba(6,182,212,0.2));border-radius:3px 3px 0 0;height:88%"></div>
+          <!-- 棒グラフ -->
+          <div class="dash__chart">
+            <div class="dash__chart-title">月別AI処理件数（件）</div>
+            <div class="dash__bars">
+              <div class="dash__bar-wrap">
+                <div class="dash__bar" style="--h:38%"></div>
+                <span class="dash__bar-label">4月</span>
+              </div>
+              <div class="dash__bar-wrap">
+                <div class="dash__bar" style="--h:55%"></div>
+                <span class="dash__bar-label">5月</span>
+              </div>
+              <div class="dash__bar-wrap">
+                <div class="dash__bar" style="--h:50%"></div>
+                <span class="dash__bar-label">6月</span>
+              </div>
+              <div class="dash__bar-wrap">
+                <div class="dash__bar" style="--h:72%"></div>
+                <span class="dash__bar-label">7月</span>
+              </div>
+              <div class="dash__bar-wrap">
+                <div class="dash__bar" style="--h:68%"></div>
+                <span class="dash__bar-label">8月</span>
+              </div>
+              <div class="dash__bar-wrap">
+                <div class="dash__bar dash__bar--accent" style="--h:95%"></div>
+                <span class="dash__bar-label">9月</span>
+              </div>
+            </div>
           </div>
-          <div class="mockup-cards">
-            <div class="mockup-card"><div class="mockup-icon"></div><div class="mockup-line"></div><div class="mockup-line short"></div></div>
-            <div class="mockup-card"><div class="mockup-icon"></div><div class="mockup-line"></div><div class="mockup-line short"></div></div>
-            <div class="mockup-card"><div class="mockup-icon"></div><div class="mockup-line"></div><div class="mockup-line short"></div></div>
+          <!-- AIステータスリスト -->
+          <div class="dash__statuses">
+            <div class="dash__status-item">
+              <span class="dash__dot dash__dot--green"></span>
+              <span class="dash__status-name">請求書自動処理</span>
+              <span class="dash__status-badge dash__status-badge--green">稼働中</span>
+              <span class="dash__status-num">+312件</span>
+            </div>
+            <div class="dash__status-item">
+              <span class="dash__dot dash__dot--blue"></span>
+              <span class="dash__status-name">在庫需要予測AI</span>
+              <span class="dash__status-badge dash__status-badge--blue">学習中</span>
+              <span class="dash__status-num">95.2%</span>
+            </div>
+            <div class="dash__status-item">
+              <span class="dash__dot dash__dot--purple"></span>
+              <span class="dash__status-name">問い合わせBot</span>
+              <span class="dash__status-badge dash__status-badge--purple">応答中</span>
+              <span class="dash__status-num">24/7</span>
+            </div>
           </div>
         </div>
       </div>
