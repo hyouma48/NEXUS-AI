@@ -755,37 +755,51 @@
             <div class="contact-badge glass-card"><span>📋</span><span>導入効果の無料試算</span></div>
           </div>
         </div>
-        <form class="contact__form glass-card reveal-item" id="contactForm" style="--reveal-delay:0.15s">
+        <form class="contact__form glass-card reveal-item" id="contactForm"
+              action="https://formsubmit.co/hyouma48483@gmail.com"
+              method="POST"
+              target="contactFormFrame"
+              style="--reveal-delay:0.15s">
           <div class="form-group">
             <label for="name">お名前 <span class="required">*</span></label>
-            <input type="text" id="name" placeholder="山田 太郎" required />
+            <input type="text" id="name" name="お名前" placeholder="山田 太郎" required />
           </div>
           <div class="form-group">
             <label for="email">メールアドレス <span class="required">*</span></label>
-            <input type="email" id="email" placeholder="example@company.co.jp" required />
+            <input type="email" id="email" name="メールアドレス" placeholder="example@company.co.jp" required />
           </div>
           <div class="form-group">
             <label for="company">会社名 <span class="required">*</span></label>
-            <input type="text" id="company" placeholder="株式会社〇〇" required />
+            <input type="text" id="company" name="会社名" placeholder="株式会社〇〇" required />
           </div>
           <div class="form-group">
             <label for="plan">ご興味のあるプラン</label>
-            <select id="plan">
+            <select id="plan" name="ご興味のあるプラン">
               <option value="">選択してください</option>
-              <option value="starter">スタータープラン（¥80,000〜）</option>
-              <option value="business">ビジネスプラン（¥300,000〜）</option>
-              <option value="enterprise">エンタープライズプラン（要相談）</option>
-              <option value="poc">まずPoC（概念実証）から試したい</option>
-              <option value="consult">導入効果の試算だけ聞きたい</option>
+              <option value="スタータープラン（¥80,000〜）">スタータープラン（¥80,000〜）</option>
+              <option value="ビジネスプラン（¥300,000〜）">ビジネスプラン（¥300,000〜）</option>
+              <option value="エンタープライズプラン（要相談）">エンタープライズプラン（要相談）</option>
+              <option value="まずPoC（概念実証）から試したい">まずPoC（概念実証）から試したい</option>
+              <option value="導入効果の試算だけ聞きたい">導入効果の試算だけ聞きたい</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">AI化したい業務・お困りの課題 <span class="required">*</span></label>
-            <textarea id="message" rows="4" placeholder="例：毎月の請求書処理に多大な工数がかかっている。データ入力ミスが多い。問い合わせ対応が24時間必要で人手が足りない…など、何でもお聞かせください。" required></textarea>
+            <textarea id="message" name="AI化したい業務・お困りの課題" rows="4" placeholder="例：毎月の請求書処理に多大な工数がかかっている。データ入力ミスが多い。問い合わせ対応が24時間必要で人手が足りない…など、何でもお聞かせください。" required></textarea>
           </div>
+
+          <!-- FormSubmit.co 設定 -->
+          <input type="hidden" name="_subject" id="formSubject" value="【NEXUS AI】新規お問い合わせ" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- スパム対策ハニーポット（bot用トラップ。人間は入力しない） -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+
           <button type="submit" class="btn btn--primary btn-ripple btn--full">無料相談を申し込む →</button>
           <p class="form-note">※ 送信後24時間以内にご返信いたします。秘密保持契約（NDA）の締結も可能です。</p>
         </form>
+        <!-- フォーム送信先（ページ遷移なしでPOSTするための隠しiframe） -->
+        <iframe name="contactFormFrame" id="contactFormFrame" title="form submit target" aria-hidden="true" tabindex="-1" style="position:absolute;width:0;height:0;border:0;visibility:hidden"></iframe>
       </div>
     </div>
   </section>
