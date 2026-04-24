@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" role="img" aria-label="NEXUS AI ロゴ">
+  <defs>
+    <!-- 斜めグラデーション（パープル→シアン） -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <!-- 横グラデーション（テキスト用） -->
+    <linearGradient id="gradH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <!-- 中心ノード用ラジアルグラデーション -->
+    <radialGradient id="gradCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#a5b4fc"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </radialGradient>
+    <!-- グロー効果 -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- 外側ノードグロー -->
+    <filter id="glowSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ========== アイコン部 (72x72) ========== -->
+  <!-- 中心: (36, 38) -->
+  <!-- 外側6ノード: 半径22, 60°ごと (上から時計回り) -->
+  <!--  上    : (36, 16)   -->
+  <!--  右上  : (55, 27)   -->
+  <!--  右下  : (55, 49)   -->
+  <!--  下    : (36, 60)   -->
+  <!--  左下  : (17, 49)   -->
+  <!--  左上  : (17, 27)   -->
+
+  <!-- 六角形アウトライン -->
+  <polygon
+    points="36,16 55,27 55,49 36,60 17,49 17,27"
+    fill="none"
+    stroke="url(#grad)"
+    stroke-width="1"
+    opacity="0.22"/>
+
+  <!-- 中心から各ノードへのライン -->
+  <g stroke="url(#grad)" stroke-width="1.6" stroke-linecap="round" opacity="0.75" filter="url(#glowSoft)">
+    <line x1="36" y1="38" x2="36" y2="16"/>
+    <line x1="36" y1="38" x2="55" y2="27"/>
+    <line x1="36" y1="38" x2="55" y2="49"/>
+    <line x1="36" y1="38" x2="36" y2="60"/>
+    <line x1="36" y1="38" x2="17" y2="49"/>
+    <line x1="36" y1="38" x2="17" y2="27"/>
+  </g>
+
+  <!-- 外側ノード（小） -->
+  <g fill="url(#grad)" filter="url(#glowSoft)">
+    <circle cx="36" cy="16" r="3.8"/>
+    <circle cx="55" cy="27" r="3.8"/>
+    <circle cx="55" cy="49" r="3.8"/>
+    <circle cx="36" cy="60" r="3.8"/>
+    <circle cx="17" cy="49" r="3.8"/>
+    <circle cx="17" cy="27" r="3.8"/>
+  </g>
+
+  <!-- 中心ノード（大・グロー） -->
+  <circle cx="36" cy="38" r="9"   fill="url(#gradCenter)" filter="url(#glow)"/>
+  <circle cx="36" cy="38" r="4.5" fill="white" opacity="0.95"/>
+
+  <!-- ========== テキスト部 ========== -->
+  <!-- NEXUS -->
+  <text
+    x="84" y="47"
+    font-family="'M PLUS 1','Inter','Noto Sans JP','Segoe UI',Arial,sans-serif"
+    font-weight="900"
+    font-size="30"
+    letter-spacing="-0.8"
+    fill="white">NEXUS</text>
+
+  <!-- AI（グラデーション） -->
+  <text
+    x="86" y="65"
+    font-family="'Inter','M PLUS 1',Arial,sans-serif"
+    font-weight="600"
+    font-size="11.5"
+    letter-spacing="5.5"
+    fill="url(#gradH)">AI SYSTEMS</text>
+</svg>

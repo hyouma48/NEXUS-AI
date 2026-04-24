@@ -17,9 +17,62 @@
   <!-- ナビゲーション -->
   <header id="header">
     <nav class="nav">
-      <a href="#" class="nav__logo">
-        <span class="logo-icon">◈</span>
-        <span class="logo-text">NEXUS <em>AI</em></span>
+      <a href="#" class="nav__logo" aria-label="NEXUS AI">
+        <svg class="nav__logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" aria-hidden="true">
+          <defs>
+            <linearGradient id="nl-g" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+            <linearGradient id="nl-gh" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#818cf8"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+            <radialGradient id="nl-gc" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#a5b4fc"/>
+              <stop offset="100%" stop-color="#6366f1"/>
+            </radialGradient>
+            <filter id="nl-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="1.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="nl-gs" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="1" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- 六角形アウトライン -->
+          <polygon points="22,7 35,15 35,30 22,37 9,30 9,15" fill="none" stroke="url(#nl-g)" stroke-width="0.8" opacity="0.25"/>
+          <!-- 中心→外側ノードのライン -->
+          <g stroke="url(#nl-g)" stroke-width="1.2" stroke-linecap="round" opacity="0.8" filter="url(#nl-gs)">
+            <line x1="22" y1="22" x2="22" y2="7"/>
+            <line x1="22" y1="22" x2="35" y2="15"/>
+            <line x1="22" y1="22" x2="35" y2="30"/>
+            <line x1="22" y1="22" x2="22" y2="37"/>
+            <line x1="22" y1="22" x2="9"  y2="30"/>
+            <line x1="22" y1="22" x2="9"  y2="15"/>
+          </g>
+          <!-- 外側ノード -->
+          <g fill="url(#nl-g)" filter="url(#nl-gs)">
+            <circle cx="22" cy="7"  r="2.8"/>
+            <circle cx="35" cy="15" r="2.8"/>
+            <circle cx="35" cy="30" r="2.8"/>
+            <circle cx="22" cy="37" r="2.8"/>
+            <circle cx="9"  cy="30" r="2.8"/>
+            <circle cx="9"  cy="15" r="2.8"/>
+          </g>
+          <!-- 中心ノード -->
+          <circle cx="22" cy="22" r="6.5" fill="url(#nl-gc)" filter="url(#nl-glow)"/>
+          <circle cx="22" cy="22" r="3"   fill="white" opacity="0.95"/>
+          <!-- テキスト: NEXUS -->
+          <text x="50" y="28"
+            font-family="'M PLUS 1','Inter','Noto Sans JP','Segoe UI',Arial,sans-serif"
+            font-weight="900" font-size="20" letter-spacing="-0.5" fill="white">NEXUS</text>
+          <!-- テキスト: AI SYSTEMS -->
+          <text x="52" y="40"
+            font-family="'Inter',Arial,sans-serif"
+            font-weight="600" font-size="8" letter-spacing="4" fill="url(#nl-gh)">AI SYSTEMS</text>
+        </svg>
       </a>
       <ul class="nav__links">
         <li><a href="#features"     class="nav-link">特徴</a></li>
@@ -650,9 +703,56 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <div class="nav__logo" style="margin-bottom:1rem">
-            <span class="logo-icon">◈</span>
-            <span class="logo-text">NEXUS <em>AI</em></span>
+          <div style="margin-bottom:1.2rem">
+            <svg class="footer__logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" aria-label="NEXUS AI">
+              <defs>
+                <linearGradient id="fl-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+                <linearGradient id="fl-gh" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#818cf8"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+                <radialGradient id="fl-gc" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stop-color="#a5b4fc"/>
+                  <stop offset="100%" stop-color="#6366f1"/>
+                </radialGradient>
+                <filter id="fl-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="1.8" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="fl-gs" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="1" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <polygon points="22,7 35,15 35,30 22,37 9,30 9,15" fill="none" stroke="url(#fl-g)" stroke-width="0.8" opacity="0.25"/>
+              <g stroke="url(#fl-g)" stroke-width="1.2" stroke-linecap="round" opacity="0.8" filter="url(#fl-gs)">
+                <line x1="22" y1="22" x2="22" y2="7"/>
+                <line x1="22" y1="22" x2="35" y2="15"/>
+                <line x1="22" y1="22" x2="35" y2="30"/>
+                <line x1="22" y1="22" x2="22" y2="37"/>
+                <line x1="22" y1="22" x2="9"  y2="30"/>
+                <line x1="22" y1="22" x2="9"  y2="15"/>
+              </g>
+              <g fill="url(#fl-g)" filter="url(#fl-gs)">
+                <circle cx="22" cy="7"  r="2.8"/>
+                <circle cx="35" cy="15" r="2.8"/>
+                <circle cx="35" cy="30" r="2.8"/>
+                <circle cx="22" cy="37" r="2.8"/>
+                <circle cx="9"  cy="30" r="2.8"/>
+                <circle cx="9"  cy="15" r="2.8"/>
+              </g>
+              <circle cx="22" cy="22" r="6.5" fill="url(#fl-gc)" filter="url(#fl-glow)"/>
+              <circle cx="22" cy="22" r="3"   fill="white" opacity="0.95"/>
+              <text x="50" y="28"
+                font-family="'M PLUS 1','Inter','Noto Sans JP','Segoe UI',Arial,sans-serif"
+                font-weight="900" font-size="20" letter-spacing="-0.5" fill="white">NEXUS</text>
+              <text x="52" y="40"
+                font-family="'Inter',Arial,sans-serif"
+                font-weight="600" font-size="8" letter-spacing="4" fill="url(#fl-gh)">AI SYSTEMS</text>
+            </svg>
           </div>
           <p>AIで業務を革新するシステム開発会社。カスタムAI開発・業務自動化・データ分析基盤の構築を通じて、日本企業の競争力向上を支援します。</p>
         </div>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS AI — ロゴプレビュー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;600;900&family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #0c0c1d;
+      color: #e8eaf6;
+      min-height: 100vh;
+      padding: 48px 24px;
+    }
+    h1 {
+      font-family: 'M PLUS 1', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #8892b0;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .previews {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .preview-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .preview-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #4a5568;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      border-left: 2px solid #6366f1;
+      padding-left: 10px;
+    }
+    .preview-bg {
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .preview-bg--dark    { background: #0c0c1d; border: 1px solid rgba(255,255,255,0.08); }
+    .preview-bg--dark2   { background: #13132b; border: 1px solid rgba(255,255,255,0.08); }
+    .preview-bg--glass   {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .preview-bg--light   { background: #f0f0f8; border: 1px solid #dde1e7; }
+    .preview-bg--white   { background: #ffffff; border: 1px solid #e2e8f0; }
+    .preview-bg--gradient {
+      background: linear-gradient(135deg, #1a1a3e, #0c2340);
+      border: 1px solid rgba(99,102,241,0.2);
+    }
+
+    /* ロゴSVG（インライン） */
+    .logo-inline svg { display: block; }
+
+    /* サイズバリエーション */
+    .size-row {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* アイコンのみ版 */
+    .icon-only {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 8px 0;
+    }
+
+    /* 補足テキスト */
+    .note {
+      font-size: 0.72rem;
+      color: #4a5568;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NEXUS AI — Logo Preview</h1>
+
+  <div class="previews">
+
+    <!-- ダーク背景（メイン） -->
+    <div class="preview-block">
+      <div class="preview-label">ダーク背景（メインカラー）</div>
+      <div class="preview-bg preview-bg--dark">
+        <div class="logo-inline">
+          <!-- ロゴ Large -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+            <defs>
+              <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+              <linearGradient id="g1H" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#818cf8"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+              <radialGradient id="gc1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%"   stop-color="#a5b4fc"/>
+                <stop offset="100%" stop-color="#6366f1"/>
+              </radialGradient>
+              <filter id="glow1" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2.2" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="gs1" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="1.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g1)" stroke-width="1" opacity="0.22"/>
+            <g stroke="url(#g1)" stroke-width="1.6" stroke-linecap="round" opacity="0.75" filter="url(#gs1)">
+              <line x1="36" y1="38" x2="36" y2="16"/>
+              <line x1="36" y1="38" x2="55" y2="27"/>
+              <line x1="36" y1="38" x2="55" y2="49"/>
+              <line x1="36" y1="38" x2="36" y2="60"/>
+              <line x1="36" y1="38" x2="17" y2="49"/>
+              <line x1="36" y1="38" x2="17" y2="27"/>
+            </g>
+            <g fill="url(#g1)" filter="url(#gs1)">
+              <circle cx="36" cy="16" r="3.8"/>
+              <circle cx="55" cy="27" r="3.8"/>
+              <circle cx="55" cy="49" r="3.8"/>
+              <circle cx="36" cy="60" r="3.8"/>
+              <circle cx="17" cy="49" r="3.8"/>
+              <circle cx="17" cy="27" r="3.8"/>
+            </g>
+            <circle cx="36" cy="38" r="9"   fill="url(#gc1)" filter="url(#glow1)"/>
+            <circle cx="36" cy="38" r="4.5" fill="white" opacity="0.95"/>
+            <text x="84" y="47" font-family="'M PLUS 1','Inter','Segoe UI',Arial,sans-serif" font-weight="900" font-size="30" letter-spacing="-0.8" fill="white">NEXUS</text>
+            <text x="86" y="65" font-family="'Inter',Arial,sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.5" fill="url(#g1H)">AI SYSTEMS</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- サイズバリエーション -->
+    <div class="preview-block">
+      <div class="preview-label">サイズバリエーション</div>
+      <div class="preview-bg preview-bg--dark2">
+        <div class="size-row">
+          <!-- XL -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+            <defs>
+              <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="g2H" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+              <radialGradient id="gc2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+              <filter id="glow2" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="gs2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g2)" stroke-width="1" opacity="0.22"/>
+            <g stroke="url(#g2)" stroke-width="1.6" stroke-linecap="round" opacity="0.75" filter="url(#gs2)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+            <g fill="url(#g2)" filter="url(#gs2)"><circle cx="36" cy="16" r="3.8"/><circle cx="55" cy="27" r="3.8"/><circle cx="55" cy="49" r="3.8"/><circle cx="36" cy="60" r="3.8"/><circle cx="17" cy="49" r="3.8"/><circle cx="17" cy="27" r="3.8"/></g>
+            <circle cx="36" cy="38" r="9" fill="url(#gc2)" filter="url(#glow2)"/>
+            <circle cx="36" cy="38" r="4.5" fill="white" opacity="0.95"/>
+            <text x="84" y="47" font-family="'M PLUS 1','Inter','Segoe UI',Arial,sans-serif" font-weight="900" font-size="30" letter-spacing="-0.8" fill="white">NEXUS</text>
+            <text x="86" y="65" font-family="'Inter',Arial,sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.5" fill="url(#g2H)">AI SYSTEMS</text>
+          </svg>
+
+          <!-- M -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="200" height="50">
+            <defs>
+              <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="g3H" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+              <radialGradient id="gc3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+              <filter id="glow3" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="gs3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g3)" stroke-width="1" opacity="0.22"/>
+            <g stroke="url(#g3)" stroke-width="1.6" stroke-linecap="round" opacity="0.75" filter="url(#gs3)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+            <g fill="url(#g3)" filter="url(#gs3)"><circle cx="36" cy="16" r="3.8"/><circle cx="55" cy="27" r="3.8"/><circle cx="55" cy="49" r="3.8"/><circle cx="36" cy="60" r="3.8"/><circle cx="17" cy="49" r="3.8"/><circle cx="17" cy="27" r="3.8"/></g>
+            <circle cx="36" cy="38" r="9" fill="url(#gc3)" filter="url(#glow3)"/>
+            <circle cx="36" cy="38" r="4.5" fill="white" opacity="0.95"/>
+            <text x="84" y="47" font-family="'M PLUS 1','Inter','Segoe UI',Arial,sans-serif" font-weight="900" font-size="30" letter-spacing="-0.8" fill="white">NEXUS</text>
+            <text x="86" y="65" font-family="'Inter',Arial,sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.5" fill="url(#g3H)">AI SYSTEMS</text>
+          </svg>
+
+          <!-- S -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="130" height="32">
+            <defs>
+              <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+              <linearGradient id="g4H" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+              <radialGradient id="gc4" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+              <filter id="glow4" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="gs4" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g4)" stroke-width="1" opacity="0.22"/>
+            <g stroke="url(#g4)" stroke-width="1.6" stroke-linecap="round" opacity="0.75" filter="url(#gs4)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+            <g fill="url(#g4)" filter="url(#gs4)"><circle cx="36" cy="16" r="3.8"/><circle cx="55" cy="27" r="3.8"/><circle cx="55" cy="49" r="3.8"/><circle cx="36" cy="60" r="3.8"/><circle cx="17" cy="49" r="3.8"/><circle cx="17" cy="27" r="3.8"/></g>
+            <circle cx="36" cy="38" r="9" fill="url(#gc4)" filter="url(#glow4)"/>
+            <circle cx="36" cy="38" r="4.5" fill="white" opacity="0.95"/>
+            <text x="84" y="47" font-family="'M PLUS 1','Inter','Segoe UI',Arial,sans-serif" font-weight="900" font-size="30" letter-spacing="-0.8" fill="white">NEXUS</text>
+            <text x="86" y="65" font-family="'Inter',Arial,sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.5" fill="url(#g4H)">AI SYSTEMS</text>
+          </svg>
+        </div>
+        <p class="note" style="color:#4a5568;font-size:0.7rem;margin-top:16px">XL（320px） / M（200px） / S（130px）</p>
+      </div>
+    </div>
+
+    <!-- アイコン単体 -->
+    <div class="preview-block">
+      <div class="preview-label">アイコン単体（SNSアイコン・ファビコン用）</div>
+      <div class="preview-bg preview-bg--dark" style="gap:32px">
+        <!-- 64px -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 76" width="64" height="64">
+          <defs>
+            <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+            <radialGradient id="gc5" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+            <filter id="glow5" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gs5" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g5)" stroke-width="1.2" opacity="0.28"/>
+          <g stroke="url(#g5)" stroke-width="1.8" stroke-linecap="round" opacity="0.8" filter="url(#gs5)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+          <g fill="url(#g5)" filter="url(#gs5)"><circle cx="36" cy="16" r="4.2"/><circle cx="55" cy="27" r="4.2"/><circle cx="55" cy="49" r="4.2"/><circle cx="36" cy="60" r="4.2"/><circle cx="17" cy="49" r="4.2"/><circle cx="17" cy="27" r="4.2"/></g>
+          <circle cx="36" cy="38" r="10" fill="url(#gc5)" filter="url(#glow5)"/>
+          <circle cx="36" cy="38" r="5"  fill="white" opacity="0.95"/>
+        </svg>
+
+        <!-- 96px -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 76" width="96" height="96">
+          <defs>
+            <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+            <radialGradient id="gc6" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+            <filter id="glow6" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gs6" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g6)" stroke-width="1.2" opacity="0.28"/>
+          <g stroke="url(#g6)" stroke-width="1.8" stroke-linecap="round" opacity="0.8" filter="url(#gs6)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+          <g fill="url(#g6)" filter="url(#gs6)"><circle cx="36" cy="16" r="4.2"/><circle cx="55" cy="27" r="4.2"/><circle cx="55" cy="49" r="4.2"/><circle cx="36" cy="60" r="4.2"/><circle cx="17" cy="49" r="4.2"/><circle cx="17" cy="27" r="4.2"/></g>
+          <circle cx="36" cy="38" r="10" fill="url(#gc6)" filter="url(#glow6)"/>
+          <circle cx="36" cy="38" r="5"  fill="white" opacity="0.95"/>
+        </svg>
+
+        <!-- 128px -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 76" width="128" height="128">
+          <defs>
+            <linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+            <radialGradient id="gc7" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a5b4fc"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+            <filter id="glow7" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gs7" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g7)" stroke-width="1.2" opacity="0.28"/>
+          <g stroke="url(#g7)" stroke-width="1.8" stroke-linecap="round" opacity="0.8" filter="url(#gs7)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+          <g fill="url(#g7)" filter="url(#gs7)"><circle cx="36" cy="16" r="4.2"/><circle cx="55" cy="27" r="4.2"/><circle cx="55" cy="49" r="4.2"/><circle cx="36" cy="60" r="4.2"/><circle cx="17" cy="49" r="4.2"/><circle cx="17" cy="27" r="4.2"/></g>
+          <circle cx="36" cy="38" r="10" fill="url(#gc7)" filter="url(#glow7)"/>
+          <circle cx="36" cy="38" r="5"  fill="white" opacity="0.95"/>
+        </svg>
+      </div>
+      <p class="note">64px / 96px / 128px</p>
+    </div>
+
+    <!-- ライト背景版 -->
+    <div class="preview-block">
+      <div class="preview-label">ライト背景（資料・印刷物用）</div>
+      <div class="preview-bg preview-bg--light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="280" height="70">
+          <defs>
+            <linearGradient id="g8" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+            <linearGradient id="g8H" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+            <radialGradient id="gc8" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/></radialGradient>
+            <filter id="glow8" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gs8" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <polygon points="36,16 55,27 55,49 36,60 17,49 17,27" fill="none" stroke="url(#g8)" stroke-width="1" opacity="0.3"/>
+          <g stroke="url(#g8)" stroke-width="1.6" stroke-linecap="round" opacity="0.8" filter="url(#gs8)"><line x1="36" y1="38" x2="36" y2="16"/><line x1="36" y1="38" x2="55" y2="27"/><line x1="36" y1="38" x2="55" y2="49"/><line x1="36" y1="38" x2="36" y2="60"/><line x1="36" y1="38" x2="17" y2="49"/><line x1="36" y1="38" x2="17" y2="27"/></g>
+          <g fill="url(#g8)" filter="url(#gs8)"><circle cx="36" cy="16" r="3.8"/><circle cx="55" cy="27" r="3.8"/><circle cx="55" cy="49" r="3.8"/><circle cx="36" cy="60" r="3.8"/><circle cx="17" cy="49" r="3.8"/><circle cx="17" cy="27" r="3.8"/></g>
+          <circle cx="36" cy="38" r="9" fill="url(#gc8)" filter="url(#glow8)"/>
+          <circle cx="36" cy="38" r="4.5" fill="white" opacity="0.95"/>
+          <text x="84" y="47" font-family="'M PLUS 1','Inter','Segoe UI',Arial,sans-serif" font-weight="900" font-size="30" letter-spacing="-0.8" fill="#1e1e3f">NEXUS</text>
+          <text x="86" y="65" font-family="'Inter',Arial,sans-serif" font-weight="600" font-size="11.5" letter-spacing="5.5" fill="url(#g8H)">AI SYSTEMS</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
